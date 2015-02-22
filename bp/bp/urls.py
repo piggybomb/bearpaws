@@ -9,4 +9,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'cofy.views.index'),
+    url(r'^job/', 'cofy.views.job'),
+    url(r'^joblist/', 'cofy.views.joblist'),
 )

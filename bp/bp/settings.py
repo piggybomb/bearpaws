@@ -87,5 +87,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/bp/staticfiles/'
+STATIC_ROOT = '/var/www/bearpaws/bp/staticfiles/'
+STATICFILES_DIRS = (
+    '/var/www/bearpaws/bp/cofy/static',
+)
 
+TEMPLATE_DIRS = (
+    '/var/www/bearpaws/bp/templates',
+    '/var/www/bearpaws/bp/cofy/templates/cofy',
+)

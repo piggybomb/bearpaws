@@ -1,10 +1,17 @@
 {% extends 'cofy/base.html' %}
 {% load static %}
-
+{% block head %}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
 {% block title %}Job List{% endblock %}
 
 {% block content %}
-	<h1>Occupations</h1>
+<div class="jumbotron"><h1>Occupation List</h1>
+    <p>Your career begins with your first decision, so explore all the career opportunites in Canada</p>
+</div>
+<div class="container">
 	<div id="joblist">
 		{% if not jobs %}
 			<p>Sorry there are no occupations at the moment</p>
@@ -12,9 +19,10 @@
 		<ul>
 			{% for job in jobs %}
 				<li>
-					<a href = "/job/{{ job.noc }}/">{{ job.occupation }}</a>
+					<a href = "/job/{{ job.noc }}/">{{ job.occupational_grouping }}</a>
 				</li>
 			{% endfor %}
 		</ul>
 	</div>
+</div>
 {% endblock %}

@@ -93,6 +93,7 @@ STATICFILES_DIRS = (
     '/var/www/bearpaws/bp/cofy/static',
 )
 
+
 TEMPLATE_DIRS = (
     '/var/www/bearpaws/bp/templates',
     '/var/www/bearpaws/bp/cofy/templates/cofy',

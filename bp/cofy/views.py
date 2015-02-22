@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from cofy.models import employment, employment_growth, immigration, job_openings, job_openings, job_seekers, occupational_groupings, other_replacement, other_seekers, retirements, school_leavers, summary
-
-
+from cofy.models import *
 # Create your views here.
 
 def index(request):
@@ -22,7 +20,10 @@ def job(request, job_noc):
 	schoolLeavers = school_leavers.objects.get(noc = job_noc)
 	sum = summary.objects.get(noc = job_noc)
 
-	result = render_to_response('cofy/job.html', {"og":og, "employments":employments, "growth":growth, "imm":imm, "openings":openings, "seekers":seekers, "otherReplacements":otherReplacements, "otherSeekers":otherSeekers, "retire":retire, "schoolLeavers":schoolLeavers, "sum":sum})
+	subjobs = og.occupation.split('; ')
+	subjobs = [jobs[7:] for jobs in subjobs]
+
+	result = render_to_response('cofy/job.html', {"og":og, "employments":employments, "growth":growth, "imm":imm, "openings":openings, "seekers":seekers, "otherReplacements":otherReplacements, "otherSeekers":otherSeekers, "retire":retire, "schoolLeavers":schoolLeavers, "sum":sum, "subjobs":subjobs})
 	return result
 
 def joblist(request):

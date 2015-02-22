@@ -63,7 +63,7 @@ DATABASES = {
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 	'ENGINE': 'django.db.backends.mysql', 
 	'NAME': 'djangodb',
-        'USER': 'dbaik',
+        'USER': 'ubuntu',
         'PASSWORD': 'kimchi',
         'HOST': '',   # Or an IP Address that your DB is hosted on
         'PORT': '',

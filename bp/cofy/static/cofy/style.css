@@ -8,3 +8,9 @@ body {
   height: 350px;
   background-size: cover;
 }
+
+.btn-danger {
+color: #fff;
+background-color: #b40000;
+border-color: #b40000;
+}

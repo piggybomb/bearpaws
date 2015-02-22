@@ -1,0 +1,21 @@
+body{
+background-image: url("images/fog.jpg");
+}
+
+.jumbotron{
+background:rgba(70,70,70,0.5);
+color:rgb(240,240,240);
+}
+
+.container{
+background:rgba(70,70,70,0.5);
+color:rgb(240,240,240);
+}
+
+a{
+color:rgb(240,240,240);
+}
+
+
+
+

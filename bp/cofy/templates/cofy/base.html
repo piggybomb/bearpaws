@@ -4,11 +4,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    
+    {% block head %} 
+    {% endblock %}
     <title>{% block title %}NO TITLE{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{{STATIC_URL}}/favicon.png"/>
 </head>
   
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://www.canadianopendataexperience.ca/">CODE 2015</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
         {% block content %}{% endblock %}
 </body>
 </html>

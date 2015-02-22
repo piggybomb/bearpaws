@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^$', 'cofy.views.index'),
     url(r'^job/(?P<job_noc>\w+)/', 'cofy.views.job'),
     url(r'^joblist/', 'cofy.views.joblist'),
+    url(r'^about/', 'cofy.views.about'),
 )

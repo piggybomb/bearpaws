@@ -26,6 +26,10 @@ def job(request, job_noc):
 	return result
 
 def joblist(request):
-	jobs = occupational_groupings.objects.all()
+	jobs = occupational_groupings.objects.all().order_by('occupational_grouping')
 	results = render_to_response('cofy/joblist.html', {'jobs':jobs}, context_instance = RequestContext(request))
 	return results
+
+def about(request):
+	return render_to_response('cofy/about.html', context_instance=RequestContext(request))
+

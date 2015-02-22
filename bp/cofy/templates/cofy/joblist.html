@@ -1,1 +1,20 @@
-the jobz
+{% extends 'cofy/base.html' %}
+{% load static %}
+
+{% block title %}Job List{% endblock %}
+
+{% block content %}
+	<h1>Occupations</h1>
+	<div id="joblist">
+		{% if not jobs %}
+			<p>Sorry there are no occupations at the moment</p>
+		{% endif %}
+		<ul>
+			{% for job in jobs %}
+				<li>
+					<a href = "/job/{{ job.noc }}/">{{ job.occupation }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

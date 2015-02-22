@@ -8,12 +8,13 @@
 {% block content %}
 <div class="jumbotron">
 <h1>{{ og.occupational_grouping }}</h1>
+<p>Projections from 2012 to 2022</p>
 </div>
 <em>All the following data is in the thousands, e.g 0.8 is equal to 800</em>
 <div class="container-fluid">
         <div class="row"> 
                 <div class="col-md-6">
-                        <h2>Summary of projections</h2>
+                        <h3>Summary of projections</h3>
                         <table class="table table-hover">
                                 <tr>
                                 <td>
@@ -109,7 +110,7 @@
                                 
                 </div>
         	<div class = "col-md-6">
-        		<h2>Occuptions</h2>
+        		<h3>Occuptions</h3>
                         <ul>
                         {% for job in subjobs %}
 
@@ -126,21 +127,21 @@
         </div>
         <div class="row">
                 <div class = col-md-4>
-                        <h2>Employment</h2>
+                        <h3>Annual Employment Projections</h3>
                         <canvas id="canvas0" height="450" width="600"></canvas>        
 
                                    
                 </div>
 
                 <div class = col-md-4>
-                        <h2>Employment Growth</h2>
+                        <h3>Employment Growth Projections</h3>
                          <canvas id="canvas1" height="450" width="600"></canvas>       
 
                                 
                 </div>
 
                 <div class = col-md-4>
-                        <h2>Immigration</h2>
+                        <h3>Immigrant Job Seekers</h3>
                         <canvas id="canvas2" height="450" width="600"></canvas>        
 
                                    
@@ -148,21 +149,21 @@
         </div>
         <div class="row">
                 <div class = col-md-4>
-                        <h2>Job Openings</h2>
+                        <h3>Job Openings</h3>
                         <canvas id="canvas3" height="450" width="600"></canvas>        
 
                                    
                 </div>
 
                 <div class = col-md-4>
-                        <h2>Job Seekers</h2>
+                        <h3>All Job Seekers</h3>
                         <canvas id="canvas4" height="450" width="600"></canvas>        
 
                                    
                 </div>
 
                 <div class = col-md-4>
-                        <h2>Other Replacements</h2>
+                        <h3>Job Openings Due To Replacement</h3>
                         <canvas id="canvas5" height="450" width="600"></canvas>        
 
                                    
@@ -170,21 +171,21 @@
         </div>
         <div class="row">
                 <div class = col-md-4>
-                        <h2>Other Seekers</h2>
+                        <h3>Other Seekers</h3>
                         <canvas id="canvas6" height="450" width="600"></canvas>        
 
                                    
                 </div>
 
                 <div class = col-md-4>
-                        <h2>Retirement</h2>
+                        <h3>Retirement Rates</h3>
                         <canvas id="canvas7" height="450" width="600"></canvas>        
 
                                    
                 </div>
 
                 <div class = col-md-4>
-                        <h2>School Leavers</h2>
+                        <h3>School Leavers Seeking Jobs</h3>
                         <canvas id="canvas8" height="450" width="600"></canvas>        
 
                                 

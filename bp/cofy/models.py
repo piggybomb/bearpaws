@@ -142,7 +142,7 @@ class summary(models.Model):
     job_openings_2013_2022 = models.DecimalField(max_digits=5, decimal_places=1,default=0)
     school_leavers_2013_2022 = models.DecimalField(max_digits=5, decimal_places=1,default=0)
     immigrants_2013_2022 = models.DecimalField(max_digits=4, decimal_places=1,default=0)
-    job_seekers_2013_other_2013_2022 = models.DecimalField(max_digits=5, decimal_places=1,default=0)
+    job_seekers_other_2013_2022 = models.DecimalField(max_digits=5, decimal_places=1,default=0)
     job_seekers_all_2013_2022 = models.DecimalField(max_digits=5, decimal_places=1,default=0)
     labour_market_conditions_2010_2012 = models.CharField(max_length=8)
     projected_labour_market_conditions_2013_2022 = models.CharField(max_length=8)

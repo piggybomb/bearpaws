@@ -10,9 +10,20 @@ def index(request):
 	return render_to_response('cofy/index.html', context_instance=RequestContext(request))
 
 def job(request, job_noc):
-    job = occupational_groupings.objects.get(noc = job_noc)
-    result = render_to_response('cofy/job.html', {"job", job})
-    return result
+ 	og = occupational_groupings.objects.get(noc = job_noc)
+    	employments = employment.objects.get(noc = job_noc)
+	growth = employment_growth.objects.get(noc = job_noc)
+	imm = immigration.objects.get(noc = job_noc)
+	openings = job_openings.objects.get(noc = job_noc)
+	seekers = job_seekers.objects.get(noc = job_noc)
+	otherReplacements = other_replacement.objects.get(noc = job_noc)
+	otherSeekers = other_seekers.objects.get(noc = job_noc)
+	retire = retirements.objects.get(noc = job_noc)
+	schoolLeavers = school_leavers.objects.get(noc = job_noc)
+	sum = summary.objects.get(noc = job_noc)
+
+	result = render_to_response('cofy/job.html', {"og":og, "employments":employments, "growth":growth, "imm":imm, "openings":openings, "seekers":seekers, "otherReplacements":otherReplacements, "otherSeekers":otherSeekers, "retire":retire, "schoolLeavers":schoolLeavers, "sum":sum})
+	return result
 
 def joblist(request):
 	jobs = occupational_groupings.objects.all()

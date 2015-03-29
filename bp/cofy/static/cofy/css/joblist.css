@@ -1,6 +1,6 @@
 body{
 background-image: url("../images/joblist_bg.jpg");
-height: 1080px;
+height: 1254px;
 }
 
 .jumbotron{
@@ -22,7 +22,7 @@ color:rgb(240,240,240);
 
 #joblist{
 	overflow-y: scroll;
-	--height: 1080px;
+	--height: 1254px;
 }
 
 ul{

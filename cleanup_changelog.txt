@@ -1,0 +1,20 @@
+cleanup changelog 3/28/2105
+
+bp/cofy/temp/cofy:
+    rm readme.txt
+    move about.css to bp/cofy/static/cofy/css
+    move index.css to bp/cofy/static/cofy/css
+    change references to all htmls to bp/cofy/static/cofy/css/<file>
+    
+bp/cofy/static/cofy:
+    move about.css to bp/cofy/static/cofy/css
+    rm readme.txt
+    rm about.css.save
+    move style.css to bp/cofy/static/cofy/css
+    move joblist.css to bp/cofy/static/cofy/css
+    
+bp/cofy/static/cofy/css:
+    rm job.css
+    
+bp/templates:
+    rm readme.txt

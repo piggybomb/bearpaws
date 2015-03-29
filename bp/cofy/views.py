@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from cofy.models import *
-# Create your views here.
 
 def index(request):
 	return render_to_response('cofy/index.html', context_instance=RequestContext(request))
@@ -27,8 +26,33 @@ def job(request, job_noc):
 	return result
 
 def joblist(request):
-	jobs = occupational_groupings.objects.all().order_by('occupational_grouping')
-	results = render_to_response('cofy/joblist.html', {'jobs':jobs}, context_instance = RequestContext(request))
+        a = occupational_groupings.objects.filter(occupational_grouping__istartswith='a')
+        b = occupational_groupings.objects.filter(occupational_grouping__istartswith='b')
+        c = occupational_groupings.objects.filter(occupational_grouping__istartswith='c')
+        d = occupational_groupings.objects.filter(occupational_grouping__istartswith='d')
+        e = occupational_groupings.objects.filter(occupational_grouping__istartswith='e')
+        f = occupational_groupings.objects.filter(occupational_grouping__istartswith='f')
+        g = occupational_groupings.objects.filter(occupational_grouping__istartswith='g')
+        h = occupational_groupings.objects.filter(occupational_grouping__istartswith='h')
+        i = occupational_groupings.objects.filter(occupational_grouping__istartswith='i')
+        j = occupational_groupings.objects.filter(occupational_grouping__istartswith='j')
+        k = occupational_groupings.objects.filter(occupational_grouping__istartswith='k')
+        l = occupational_groupings.objects.filter(occupational_grouping__istartswith='l')
+        m = occupational_groupings.objects.filter(occupational_grouping__istartswith='m')
+        n = occupational_groupings.objects.filter(occupational_grouping__istartswith='n')
+        o = occupational_groupings.objects.filter(occupational_grouping__istartswith='o')
+        p = occupational_groupings.objects.filter(occupational_grouping__istartswith='p')
+        q = occupational_groupings.objects.filter(occupational_grouping__istartswith='q')
+        r = occupational_groupings.objects.filter(occupational_grouping__istartswith='r')
+        s = occupational_groupings.objects.filter(occupational_grouping__istartswith='s')
+        t = occupational_groupings.objects.filter(occupational_grouping__istartswith='t')
+        u = occupational_groupings.objects.filter(occupational_grouping__istartswith='u')
+        v = occupational_groupings.objects.filter(occupational_grouping__istartswith='v')
+        w = occupational_groupings.objects.filter(occupational_grouping__istartswith='w')
+        x = occupational_groupings.objects.filter(occupational_grouping__istartswith='x')
+        y = occupational_groupings.objects.filter(occupational_grouping__istartswith='y')
+        z = occupational_groupings.objects.filter(occupational_grouping__istartswith='z')
+	results = render_to_response('cofy/joblist.html', {'a': a, 'b':b, 'c':c, 'd':d,'e':e, 'f':f, 'g':g, 'h':h, 'i':i, 'j':j, 'k':k, 'l':l, 'm':m, 'n':n, 'o':o, 'p':p, 'q':q, 'r':r, 's':s, 't':t, 'u':u, 'v':v, 'w':w, 'x':x, 'y':y, 'z':z}, context_instance = RequestContext(request))
 	return results
 
 def about(request):

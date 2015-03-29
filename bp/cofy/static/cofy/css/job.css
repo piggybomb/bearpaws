@@ -1,0 +1,27 @@
+body{
+background-image: url("../images/job_bg.jpg");
+height: 1080px;
+}
+
+.jumbotron{
+background:rgba(70,70,70,0.5);
+color:rgb(240,240,240);
+}
+
+.container{
+background:rgba(70,70,70,0.5);
+color:rgb(240,240,240);
+}
+
+#disclaimer{
+background:rgba(70,70,70,0.5);
+color:rgb(240,240,240);
+}
+
+#stats{
+background:rgba(70,70,70,0.5);
+color:rgb(240,240,240);
+overflow-y: scroll;
+--height: 1080px;
+height: 100%;
+}

@@ -32,12 +32,16 @@ color:rgb(240,240,240);
 
 
 #joblist{
-	overflow-y: scroll;
 	--height: 1254px;
 }
 
 ul{
 	height: 100%;
+	padding-left: 0;
 }
-
+.list-group-item{
+	--list-style-type: none;
+	background-color: rgba(200, 200, 200,0.1);
+	border: none;
+}
 

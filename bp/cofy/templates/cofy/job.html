@@ -23,7 +23,7 @@
                                         Employment in 2012
                                 </td>
                                 <td>
-                                        {{ sum.employment_in_2012 }}
+                                        {{ jobSummary.employment_in_2012 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -31,7 +31,7 @@
                                         Cumulative employment growth from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.employment_growth_2013_2022 }}
+                                        {{ jobSummary.employment_growth_2013_2022 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -39,7 +39,7 @@
                                         Cumulative Retirements from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.retirements_2013_2022 }}
+                                        {{ jobSummary.retirements_2013_2022 }}
                                 </td>
                                  </tr>
                                 <tr>
@@ -47,7 +47,7 @@
                                         Cumulative Other replacement demand from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.other_replacement_2013_2022 }}
+                                        {{ jobSummary.other_replacement_2013_2022 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -55,7 +55,7 @@
                                         Cumulative Job Openings from all components from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.job_openings_2013_2022 }}
+                                        {{ jobSummary.job_openings_2013_2022 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -63,7 +63,7 @@
                                         Cumulative number of school leavers from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.school_leavers_2013_2022 }}
+                                        {{ jobSummary.school_leavers_2013_2022 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -71,7 +71,7 @@
                                         Cumulative immigrants entering the labour market from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.immigrants_2013_2022 }}
+                                        {{ jobSummary.immigrants_2013_2022 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -79,7 +79,7 @@
                                         Cumulative job seekers from other categories from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.job_seekers_other_2013_2022 }}
+                                        {{ jobSummary.job_seekers_other_2013_2022 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -87,7 +87,7 @@
                                         Cumulative number of job seekers from all components from 2013-2022
                                 </td>
                                 <td>
-                                        {{ sum.job_seekers_all_2013_2022 }}
+                                        {{ jobSummary.job_seekers_all_2013_2022 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -95,7 +95,7 @@
                                         Assessment of the labour market conditions in recent years
                                 </td>
                                 <td>
-                                        {{ sum.labour_market_conditions_2010_2012 }}
+                                        {{ jobSummary.labour_market_conditions_2010_2012 }}
                                 </td>
                                 </tr>
                                 <tr>
@@ -103,7 +103,7 @@
                                         Final Assessment of projected labour market conditions
                                 </td>
                                 <td>
-                                        {{ sum.projected_labour_market_conditions_2013_2022 }}
+                                        {{ jobSummary.projected_labour_market_conditions_2013_2022 }}
                                 </td>
                                 </tr>
 
@@ -113,257 +113,38 @@
                 </div>
         	<div class = "col-md-6">
         		<h3>Occuptions</h3>
-                        <ul>
+                    <ul>
                         {% for job in subjobs %}
-
-                                <li>
-                                        {{ job }}
-                                </li>
+                            <li>
+                                {{ job }}
+                            </li>
                         {% endfor %}
-                        </ul>
-
-
-        		
-        			
+                    </ul>
+                <select class="form-control" onchange="generateChart()">
+                    <option value="employment">Annual Employment Projections</option>
+                    <option value="growth">Employment Growth Projections</option>
+                    <option value="immigration">Immigrant Job Seekers</option>
+                    <option value="openings">Job Openings</option>
+                    <option value="seekers">All Job Seekers</option>
+                    <option value="otherReplacements">Job Openings Due To Replacement</option>
+                    <option value="otherSeekers">Other Seekers</option>
+                    <option value="retirement">Retirement Rates</option>
+                    <option value="schoolLeavers">School Leavers Seeking Jobs</option>
+                </select>
+                <!--TODO: find a way to make this chart stay a fixed size and not get changed by the JS -->
+                <canvas id="canvas" height="450" width="600"></canvas> 
         	</div>
         </div>
-        <div class="row">
-                <div class = col-md-4>
-                        <h3>Annual Employment Projections</h3>
-                        <canvas id="canvas0" height="450" width="600"></canvas>        
-
-                                   
-                </div>
-
-                <div class = col-md-4>
-                        <h3>Employment Growth Projections</h3>
-                         <canvas id="canvas1" height="450" width="600"></canvas>       
-
-                                
-                </div>
-
-                <div class = col-md-4>
-                        <h3>Immigrant Job Seekers</h3>
-                        <canvas id="canvas2" height="450" width="600"></canvas>        
-
-                                   
-                </div>
-        </div>
-        <div class="row">
-                <div class = col-md-4>
-                        <h3>Job Openings</h3>
-                        <canvas id="canvas3" height="450" width="600"></canvas>        
-
-                                   
-                </div>
-
-                <div class = col-md-4>
-                        <h3>All Job Seekers</h3>
-                        <canvas id="canvas4" height="450" width="600"></canvas>        
-
-                                   
-                </div>
-
-                <div class = col-md-4>
-                        <h3>Job Openings Due To Replacement</h3>
-                        <canvas id="canvas5" height="450" width="600"></canvas>        
-
-                                   
-                </div>
-        </div>
-        <div class="row">
-                <div class = col-md-4>
-                        <h3>Other Seekers</h3>
-                        <canvas id="canvas6" height="450" width="600"></canvas>        
-
-                                   
-                </div>
-
-                <div class = col-md-4>
-                        <h3>Retirement Rates</h3>
-                        <canvas id="canvas7" height="450" width="600"></canvas>        
-
-                                   
-                </div>
-
-                <div class = col-md-4>
-                        <h3>School Leavers Seeking Jobs</h3>
-                        <canvas id="canvas8" height="450" width="600"></canvas>        
-
-                                
-                </div>
-        </div>
+        
 </div>
-        <script src="{% static 'cofy/js/Chart.js' %}"></script>
-        <script>
-                var lineChartData = [
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Employment",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{employments.y2012}},{{employments.y2013}},{{employments.y2014}},{{employments.y2015}},{{employments.y2016}},{{employments.y2017}},{{employments.y2018}},{{employments.y2019}},{{employments.y2020}},{{employments.y2021}},{{employments.y2022}}]
-                                }
-                        ]
+{% endblock %}
 
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Growth",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{growth.y2012}},{{growth.y2013}},{{growth.y2014}},{{growth.y2015}},{{growth.y2016}},{{growth.y2017}},{{growth.y2018}},{{growth.y2019}},{{growth.y2020}},{{growth.y2021}},{{growth.y2022}}]
-                                }
-                        ]
-
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Immigrants",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{imm.y2012}},{{imm.y2013}},{{imm.y2014}},{{imm.y2015}},{{imm.y2016}},{{imm.y2017}},{{imm.y2018}},{{imm.y2019}},{{imm.y2020}},{{imm.y2021}},{{imm.y2022}}]
-                                }
-                        ]
-
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Job Openings",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{openings.y2012}},{{openings.y2013}},{{openings.y2014}},{{openings.y2015}},{{openings.y2016}},{{openings.y2017}},{{openings.y2018}},{{openings.y2019}},{{openings.y2020}},{{openings.y2021}},{{openings.y2022}}]
-                                }
-                        ]
-
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Job seekers",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{seekers.y2012}},{{seekers.y2013}},{{seekers.y2014}},{{seekers.y2015}},{{seekers.y2016}},{{seekers.y2017}},{{seekers.y2018}},{{seekers.y2019}},{{seekers.y2020}},{{seekers.y2021}},{{seekers.y2022}}]
-                                }
-                        ]
-
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Other Replacements",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{otherReplacements.y2012}},{{otherReplacements.y2013}},{{otherReplacements.y2014}},{{otherReplacements.y2015}},{{otherReplacements.y2016}},{{otherReplacements.y2017}},{{otherReplacements.y2018}},{{otherReplacements.y2019}},{{otherReplacements.y2020}},{{otherReplacements.y2021}},{{otherReplacements.y2022}}]
-                                }
-                        ]
-
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Other Seekers",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{otherSeekers.y2012}},{{otherSeekers.y2013}},{{otherSeekers.y2014}},{{otherSeekers.y2015}},{{otherSeekers.y2016}},{{otherSeekers.y2017}},{{otherSeekers.y2018}},{{otherSeekers.y2019}},{{otherSeekers.y2020}},{{otherSeekers.y2021}},{{otherSeekers.y2022}}]
-                                }
-                        ]
-
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "Retirement",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{retire.y2012}},{{retire.y2013}},{{retire.y2014}},{{retire.y2015}},{{retire.y2016}},{{retire.y2017}},{{retire.y2018}},{{retire.y2019}},{{retire.y2020}},{{retire.y2021}},{{retire.y2022}}]
-                                }
-                        ]
-
-                },
-                {
-                        labels : ["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022"],
-                        datasets : [
-                                {
-                                        label: "School Leavers",
-                                        fillColor : "rgba(180,0,0,0.2)",
-                                        strokeColor : "rgba(180,0,0,1)",
-                                        pointColor : "rgba(180,0,0,1)",
-                                        pointStrokeColor : "#fff",
-                                        pointHighlightFill : "#fff",
-                                        pointHighlightStroke : "rgba(180,0,0,1)",
-                                        data : [{{schoolLeavers.y2012}},{{schoolLeavers.y2013}},{{schoolLeavers.y2014}},{{schoolLeavers.y2015}},{{schoolLeavers.y2016}},{{schoolLeavers.y2017}},{{schoolLeavers.y2018}},{{schoolLeavers.y2019}},{{schoolLeavers.y2020}},{{schoolLeavers.y2021}},{{schoolLeavers.y2022}}]
-                                }
-                        ]
-
-                }
-
-                ]
-                window.onload = function(){
-                        var ctx = [];
-                        for (i = 0; i < 9; i++)
-                        {
-                                var canvasname = "canvas" + i;
-                                //console.log(canvasname);
-                                ctx[i] = document.getElementById(canvasname).getContext("2d");
-                        }
-
-                        for (i = 0; i < 9; i++)
-                        {
-                                window.myLine = new Chart(ctx[i]).Line(lineChartData[i], {
-                                        responsive: true
-                                });
-                        }
-                        
- 
-                };
-
-        </script>
+{% block javascript %}
+<script src="{% static 'cofy/js/Chart.js' %}"></script>
+<script type="text/javascript"> var jobData = {{ jobData }};</script>
+<script src="{% static 'cofy/js/job.js' %}"></script>
 
 
 
 {% endblock %}
+
